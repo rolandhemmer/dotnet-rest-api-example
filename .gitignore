@@ -1,0 +1,61 @@
+# Ignore macOS system files and folders
+
+Network Trash Folder
+Temporary Items
+
+._*
+.apdisk
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.DS_Store
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+# Ignore Windows system files and folders
+
+$RECYCLE.BIN/
+
+~$*
+[Dd]esktop.ini
+ehthumbs.db
+[Tt]humbs.db
+
+# Ignore compiled output
+
+[Bb]in/
+[Dd]ebug/
+[Dd]ist/
+[Gg]en/
+[Oo]bj/
+[Rr]elease/
+[Tt]mp/
+
+__pycache__/
+bower_components/
+coverage/
+jspm_packages/
+node_modules/
+
+*.bin
+*.obj
+
+# Ignore editor settings and files
+
+.idea/
+.vs/
+.vscode/
+
+*.code-workspace
+*.suo
+*.user
+
+# Ignore temporary files
+
+*.bak
+*.log
+*.lock
+*.pid
+*.seed
+*.swp
