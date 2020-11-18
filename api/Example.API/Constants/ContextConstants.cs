@@ -4,7 +4,7 @@ namespace Example.API.Constants
     {
         #region NAMES
 
-        public const string ElementTableName = "elements";
+        public const string ElementTableName = "Elements";
 
         #endregion NAMES
 
