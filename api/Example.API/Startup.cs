@@ -1,6 +1,7 @@
 using Example.API.Configuration.Provider;
 using Example.API.Contexts;
 using Example.API.Middlewares;
+using Example.API.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,7 +27,9 @@ namespace Example.API
             services.AddSingleton<IConfigurationProvider, ConfigurationProvider>();
             var configuration = services.BuildServiceProvider().GetRequiredService<IConfigurationProvider>();
 
+            services.AddScoped<IElementRepository, ElementRepository>();
             services.AddDbContext<ExampleContext>(options => options.UseNpgsql(configuration.AppSettings.Database.Connection));
+
             services.AddControllers();
         }
 
