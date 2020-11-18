@@ -3,6 +3,7 @@ using Example.API.Configuration.Provider;
 using Example.API.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 using Serilog;
 
 namespace Example.API
@@ -43,7 +44,7 @@ namespace Example.API
             catch (Exception exception)
             {
                 Log.Error($"Service unexpectedly terminated: '{exception.Message}'");
-                Log.Debug($"Exception details => {exception}");
+                Log.Error($"Exception details => {JsonConvert.SerializeObject(exception)}");
             }
             finally
             {

@@ -1,5 +1,6 @@
 using Example.API.Configuration.Provider;
 using Example.API.Contexts;
+using Example.API.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,8 @@ namespace Example.API
 
             app.UseAuthorization();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
+
+            app.UseMiddleware<HttpExceptionHandlingMiddleware>();
         }
 
         public void ConfigureServices(IServiceCollection services)
