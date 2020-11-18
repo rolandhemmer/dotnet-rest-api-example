@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
+        <LangVersion>8.0</LangVersion>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <ServerGarbageCollection>false</ServerGarbageCollection>
         <WarningsAsErrors>true</WarningsAsErrors>
