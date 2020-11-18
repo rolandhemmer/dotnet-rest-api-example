@@ -1,10 +1,9 @@
 ---
 name: Feature request
 about: A new idea for this project
-title: 'feat: add/improve/update <element>'
+title: "feat: add/improve/update <element>"
 labels: enhancement, question
 assignees: rolandhemmer
-
 ---
 
 **Description**
