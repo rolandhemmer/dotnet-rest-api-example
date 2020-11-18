@@ -1,0 +1,33 @@
+# Set the default behavior
+* text=auto
+
+# Declare files that will always have LF line endings on checkout.
+*.* text eol=lf
+
+# Set default behavior for command prompt diff.
+*.cs diff=csharp
+
+# Denote all files that are truly binary and should not be modified.
+*.data binary
+*.dcm binary
+*.dll binary
+*.eof binary
+*.eot binary
+*.exe binary
+*.flv binary
+*.gif binary
+*.jpeg binary
+*.jpg binary
+*.mp3 binary
+*.mp4 binary
+*.mrc binary
+*.mov binary
+*.ogg binary
+*.png binary
+*.rpm binary
+*.swf binary
+*.t3d binary
+*.t3x binary
+*.tif binary
+*.tiff binary
+*.ttf binary
