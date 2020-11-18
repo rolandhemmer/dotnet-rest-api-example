@@ -1,30 +1,16 @@
+using Example.API.Configuration.Provider;
+using Example.API.Contexts;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Example.API
 {
     public sealed class Startup
     {
-        #region PROPERTIES
-
-        public IConfiguration Configuration { get; }
-
-        #endregion PROPERTIES
-
-        #region CONSTRUCTORS
-
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
-        #endregion CONSTRUCTORS
-
         #region METHODS
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
             app.UseRouting();
 
@@ -34,6 +20,10 @@ namespace Example.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IConfigurationProvider, ConfigurationProvider>();
+            var configuration = services.BuildServiceProvider().GetRequiredService<IConfigurationProvider>();
+
+            services.AddDbContext<ExampleContext>(options => options.UseNpgsql(configuration.AppSettings.Database.Connection));
             services.AddControllers();
         }
 

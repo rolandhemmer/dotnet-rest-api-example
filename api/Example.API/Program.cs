@@ -35,7 +35,10 @@ namespace Example.API
             try
             {
                 Log.Information($"Initializing 'Example API' service on port '{service.Port}'");
-                CreateHostBuilder(args).Build().Run();
+
+                var webHost = CreateHostBuilder(args).Build();
+                webHost.SeedDatabase();
+                webHost.Run();
             }
             catch (Exception exception)
             {
