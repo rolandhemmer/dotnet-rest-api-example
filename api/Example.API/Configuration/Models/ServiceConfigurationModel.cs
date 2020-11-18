@@ -1,6 +1,6 @@
 namespace Example.API.Configuration.Models
 {
-    public sealed class SystemConfigurationModel
+    public sealed class ServiceConfigurationModel
     {
         public string LogLevel { get; set; }
 

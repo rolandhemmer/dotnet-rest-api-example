@@ -4,6 +4,6 @@ namespace Example.API.Configuration
 {
     public sealed class AppSettings
     {
-        public SystemConfigurationModel System { get; set; }
+        public ServiceConfigurationModel Service { get; set; }
     }
 }
