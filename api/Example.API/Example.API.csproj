@@ -1,8 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
         <LangVersion>8.0</LangVersion>
+        <NoWarn>CA1062;CA2007;RCS1090;RCS1194</NoWarn>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <ServerGarbageCollection>false</ServerGarbageCollection>
         <WarningsAsErrors>true</WarningsAsErrors>

@@ -4,6 +4,7 @@
         <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
         <LangVersion>8.0</LangVersion>
         <IsPackable>false</IsPackable>
+        <NoWarn>CA1062;CA2007;RCS1090;RCS1194</NoWarn>
         <ServerGarbageCollection>false</ServerGarbageCollection>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <WarningsAsErrors>true</WarningsAsErrors>

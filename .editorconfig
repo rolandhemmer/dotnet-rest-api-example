@@ -119,13 +119,3 @@ dotnet_naming_style.pascal_case_style.capitalization = pascal_case
 dotnet_naming_symbols.constant_fields.applicable_accessibilities = *
 dotnet_naming_symbols.constant_fields.applicable_kinds = field
 dotnet_naming_symbols.constant_fields.required_modifiers = const
-
-# .NET analyses
-dotnet_diagnostic.RCS1090.severity = none # RCS1090: Call 'ConfigureAwait(false)'
-dotnet_diagnostic.RCS1194.severity = none # RCS1194: Implement exception constructors.
-
-dotnet_diagnostic.S2068.severity = none # S2068: Credentials should not be hard-coded
-dotnet_diagnostic.S2436.severity = none # S2436: Generic types should not have too many parameters
-dotnet_diagnostic.S4792.severity = none # S4792: Configuring loggers is security-sensitive
-dotnet_diagnostic.S4823.severity = none # S4823: Using command line arguments is security-sensitive
-
