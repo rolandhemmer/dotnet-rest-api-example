@@ -1,0 +1,44 @@
+version: "3"
+
+networks:
+  default:
+    name: example-network
+
+services:
+  example-api:
+    build:
+      context: ./api/Example.API
+    command: sh -c "sleep 5 && dotnet Example.API.dll"
+    container_name: example-api
+    depends_on:
+      - example-database
+    environment:
+      - Database__Connection=Server=example-database;Port=5432;UID=example-database-user;PWD=HmxWFa4EgEYJnjs7ABdLRELS4fpv86vL;Database=example-database
+    image: example-api
+    ports:
+      - "8080:8080"
+
+  example-database:
+    container_name: example-database
+    environment:
+      - POSTGRES_USER=example-database-user
+      - POSTGRES_PASSWORD=HmxWFa4EgEYJnjs7ABdLRELS4fpv86vL
+      - POSTGRES_DB=example-database
+    image: postgres:13-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - example-database-data:/var/lib/postgresql/data
+
+  example-database-viewer:
+    container_name: example-database-viewer
+    image: dpage/pgadmin4
+    ports:
+      - "54320:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=user@example.com
+      - PGADMIN_DEFAULT_PASSWORD=g3KyPSr26tgKmyWbGb4MrSmGm5c5rg8T
+
+volumes:
+  example-database-data:
+    name: example-database-data
